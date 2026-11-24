@@ -1,0 +1,324 @@
+.list {
+  display: grid;
+  gap: var(--gap);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+}
+
+/* ---------- Card shell ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  transition: background 0.3s var(--ease);
+}
+
+.card:hover {
+  background: var(--card-hover);
+}
+
+.cardLink {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Featured: full width but deliberately short, so it doesn't fill the screen */
+.featured .visual {
+  aspect-ratio: 2.35 / 1;
+}
+
+/* Grid cards: closer to the reference's squarer thumbnails */
+.small .visual {
+  aspect-ratio: 1.42 / 1;
+}
+
+.visual > div:first-child {
+  will-change: transform;
+}
+
+.card:hover .visual > div:first-child {
+  transform: translateY(-1.2cqw);
+}
+
+.card:hover .visual > div:last-child {
+  transform: translateY(-2cqw) rotate(-1deg);
+}
+
+.flag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ---------- Meta ---------- */
+.meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 12px 10px;
+}
+
+/* Grid cards stack text over a chips/arrow row, like the reference */
+.small .meta {
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 10px 8px;
+}
+
+.text h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.small .text h3 {
+  font-size: 18px;
+}
+
+.text h3 span {
+  margin-left: 9px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.text p {
+  max-width: 440px;
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.small .side {
+  justify-content: space-between;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.small .chips {
+  flex: 1;
+}
+
+.code {
+  position: relative;
+  z-index: 2;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 11.5px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-2);
+  transition:
+    background 0.3s var(--ease),
+    color 0.3s var(--ease),
+    transform 0.4s var(--ease);
+}
+
+.card:hover .arrow {
+  background: var(--cream);
+  color: var(--cream-ink);
+  transform: rotate(45deg);
+}
+
+/* ---------- "More on GitHub" visual ---------- */
+.moreStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.42 / 1;
+  overflow: hidden;
+  container-type: inline-size;
+  background:
+    radial-gradient(90% 80% at 20% 10%, #2a2a2a 0%, transparent 60%),
+    linear-gradient(160deg, #1f1f1f 0%, #161616 100%);
+}
+
+.moreStage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 6cqw 6cqw;
+  mask-image: radial-gradient(circle at center, #000 30%, transparent 80%);
+}
+
+.moreMark {
+  position: absolute;
+  right: -8cqw;
+  bottom: -10cqw;
+  width: 52cqw;
+  height: 52cqw;
+  color: rgba(255, 255, 255, 0.04);
+  transition: transform 1s var(--ease);
+}
+
+.card:hover .moreMark {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.term {
+  position: relative;
+  width: 70cqw;
+  padding: 0 3.4cqw 3.4cqw;
+  border-radius: 2.4cqw;
+  background: #0e0e0e;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 4cqw 8cqw rgba(0, 0, 0, 0.45);
+  font-family: var(--font-mono);
+  font-size: 2.5cqw;
+  line-height: 1.75;
+  color: var(--text-2);
+  transition: transform 0.9s var(--ease);
+}
+
+.card:hover .term {
+  transform: translateY(-1.6cqw);
+}
+
+.termBar {
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  height: 7cqw;
+  margin: 0 -3.4cqw 2.4cqw;
+  padding: 0 3cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.termBar span {
+  width: 1.5cqw;
+  height: 1.5cqw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.termBar p {
+  margin-left: auto;
+  font-size: 2.1cqw;
+  color: var(--faint);
+}
+
+.term p {
+  white-space: nowrap;
+}
+
+.prompt {
+  color: var(--lime);
+}
+
+.termMuted {
+  color: var(--faint);
+}
+
+.ok {
+  color: var(--green);
+}
+
+.cursor {
+  display: inline-block;
+  width: 1.3cqw;
+  height: 2.6cqw;
+  margin-left: 0.4cqw;
+  vertical-align: -0.4cqw;
+  background: var(--text-2);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured .visual {
+    aspect-ratio: 1.7 / 1;
+  }
+
+  /* The taller mobile card leaves room to enlarge the mockup's main scene and card.
+     `scale` composes with the hover `transform`, so the two don't override each other. */
+  .featured .visual > div:first-child {
+    scale: 1.32;
+  }
+
+  .featured .visual > div:last-child {
+    scale: 1.2;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 8px 8px;
+  }
+
+  .side {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .arrow {
+    margin-left: auto;
+  }
+}

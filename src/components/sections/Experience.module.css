@@ -1,0 +1,84 @@
+/* ---------- Languages strip (under the education carousel) ---------- */
+.languages {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: var(--gap);
+  padding: 18px 24px;
+}
+
+.languages > .label {
+  flex: none;
+}
+
+.languages ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  flex: 1;
+}
+
+.languages li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+
+.languages h4 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.languages p {
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.meter {
+  display: flex;
+  gap: 4px;
+}
+
+.meter span {
+  width: 12px;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meter .on {
+  background: var(--text-2);
+}
+
+@media (max-width: 860px) {
+  .languages {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .languages ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .languages li:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .languages ul {
+    grid-template-columns: 1fr;
+  }
+
+  .languages li {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

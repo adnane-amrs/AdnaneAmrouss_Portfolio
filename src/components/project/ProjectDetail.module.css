@@ -1,0 +1,328 @@
+.page {
+  padding-top: 74px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: var(--gap);
+  padding-right: 8px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 22px 28px 28px;
+}
+
+.heroChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.title {
+  max-width: 760px;
+  margin-top: 56px;
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.8vw, 50px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.lead {
+  max-width: 520px;
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.visualCard {
+  margin-top: var(--gap);
+  padding: 8px;
+}
+
+/* ---------- Meta ---------- */
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 16px 18px 18px;
+}
+
+.metaItem strong {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+/* ---------- Overview ---------- */
+.overview {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--gap);
+}
+
+.context {
+  padding: 26px 28px;
+}
+
+.context p {
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.objectives {
+  padding: 18px 20px 8px;
+}
+
+.objectives ol {
+  margin-top: 10px;
+}
+
+.objectives li {
+  display: flex;
+  gap: 14px;
+  padding: 13px 0;
+  border-top: 1px solid var(--cream-line);
+}
+
+.objectives li span {
+  flex: none;
+  font-size: 11px;
+  color: var(--cream-muted);
+  padding-top: 2px;
+}
+
+.objectives li p {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Steps ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 18px 18px 20px;
+}
+
+.stepNum {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+}
+
+.step h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.step p {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------- Highlights & stack ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--gap);
+}
+
+.highlights {
+  padding: 8px 22px;
+}
+
+.highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.highlights li + li {
+  border-top: 1px solid var(--line);
+}
+
+.checkDot {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(63, 210, 124, 0.12);
+  color: var(--green);
+}
+
+.stack {
+  padding: 18px 20px 20px;
+}
+
+.stack ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.stack li {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* ---------- Next project ---------- */
+.next {
+  display: grid;
+  grid-template-columns: 260px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 24px 8px 8px;
+  transition: background 0.3s var(--ease);
+}
+
+.next:hover {
+  background: var(--card-hover);
+}
+
+.nextVisual {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.nextText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.nextTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.nextDesc {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.nextArrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.4s var(--ease);
+}
+
+.next:hover .nextArrow {
+  background: var(--cream);
+  color: var(--cream-ink);
+  transform: rotate(45deg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overview,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .next {
+    grid-template-columns: 1fr auto;
+    padding: 8px 18px 18px 8px;
+  }
+
+  .nextVisual {
+    grid-column: 1 / -1;
+  }
+
+  .nextText {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 18px 20px 22px;
+  }
+
+  .title {
+    margin-top: 40px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    gap: 26px;
+  }
+
+  .context {
+    padding: 20px;
+  }
+}

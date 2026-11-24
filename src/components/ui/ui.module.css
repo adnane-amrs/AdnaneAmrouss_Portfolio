@@ -1,0 +1,144 @@
+/* ---------- Section bar ---------- */
+.barWrap {
+  position: relative;
+  padding-top: 6px;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  margin-inline: 6px;
+  padding: 0 11px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.barLight {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Full-bleed hairline with square end markers */
+.barLine {
+  margin-top: 7px;
+  width: calc(100vw - 2 * var(--gutter) - 16px);
+  margin-left: calc(50% - 50vw + var(--gutter) + 8px);
+}
+
+@media (min-width: 1100px) {
+  .barLine {
+    width: calc(100vw - 80px);
+    margin-left: calc(50% - 50vw + 40px);
+  }
+}
+
+/* ---------- Sticker ---------- */
+.sticker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--lime);
+  color: var(--ink);
+  text-align: right;
+  padding: 12px 12px 12px 14px;
+  font-size: 13px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  transition: transform 0.4s var(--ease), clip-path 0.4s var(--ease);
+}
+
+.sticker:hover {
+  transform: translateY(-3px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+}
+
+.sticker_sm {
+  min-width: 92px;
+  height: 130px;
+}
+
+.sticker_md {
+  width: 150px;
+  height: 128px;
+}
+
+.sticker_lg {
+  width: 180px;
+  height: 176px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 42% 100%, 0 58%);
+}
+
+.sticker_lg:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 36% 100%, 0 64%);
+}
+
+.stickerHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.square {
+  width: 8px;
+  height: 8px;
+  background: var(--ink);
+}
+
+.stickerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.sticker_top .stickerHead {
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sticker_top .square {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.stickerFoot {
+  align-self: flex-end;
+}
+
+/* ---------- Rolling button label ---------- */
+.roll {
+  display: inline-block;
+  height: 1.2em;
+  line-height: 1.2;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.rollInner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s var(--ease);
+}
+
+:global(.roll-group):hover .rollInner,
+:global(.roll-group):focus-visible .rollInner {
+  transform: translateY(-50%);
+}
+
+/* ---------- Dot field ---------- */
+.dotField {
+  position: absolute;
+  inset: 0;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  pointer-events: none;
+}

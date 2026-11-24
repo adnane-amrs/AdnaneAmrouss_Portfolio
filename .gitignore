@@ -1,0 +1,58 @@
+# ---------- Dependencies ----------
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ---------- Next.js build output ----------
+.next/
+.next-verify/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# ---------- Testing ----------
+coverage/
+
+# ---------- Environment variables (never commit secrets) ----------
+# e.g. NEXT_PUBLIC_CONTACT_ENDPOINT for the contact form
+.env
+.env*
+!.env.example
+
+# ---------- Logs ----------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---------- Deployment ----------
+.vercel/
+
+# ---------- Editors / OS ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Certificates / keys ----------
+*.pem
+*.key
+
+# ---------- Local tool settings ----------
+.claude/settings.local.json
+
+# ---------- Design references (screenshots of other templates, not part of the site) ----------
+/design-references/
+/Majd.png
+/Projects-Majd.png
+/menu.png
+/Sunroom-*.png

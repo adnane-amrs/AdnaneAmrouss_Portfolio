@@ -1,0 +1,34 @@
+.root {
+  /* Colour a letter starts from before it flips into its own colour */
+  --flip-from: #3a3a38;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Starts in the hidden pose so there is no flash of revealed text before hydration */
+.char {
+  --p: 0;
+  display: inline-block;
+  opacity: 0.3;
+  filter: blur(2px);
+  transform: perspective(800px) rotateX(45deg);
+  /* currentColor here is the inherited colour of the segment (e.g. the muted part) */
+  color: color-mix(in srgb, currentColor calc(var(--p) * 100%), var(--flip-from));
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
