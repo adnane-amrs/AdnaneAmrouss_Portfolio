@@ -976,7 +976,7 @@
 }
 
 .okText {
-  color: #7fe3a8;
+  color: var(--accent-text);
 }
 
 .linFloat {

@@ -195,8 +195,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(63, 210, 124, 0.12);
-  color: var(--green);
+  background: var(--accent-bg);
+  color: var(--accent-text);
 }
 
 .stack {

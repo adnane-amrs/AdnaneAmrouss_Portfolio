@@ -316,10 +316,10 @@ export const fr: Dictionary = {
       },
     ],
     languages: [
-      { name: "Arabe", level: "Langue maternelle" },
-      { name: "Tamazight", level: "Langue maternelle" },
-      { name: "Français", level: "Intermédiaire" },
-      { name: "Anglais", level: "Intermédiaire" },
+      { name: "Arabe", level: "Langue maternelle", score: 5 },
+      { name: "Tamazight", level: "Langue maternelle", score: 5 },
+      { name: "Français", level: "Intermédiaire", score: 3 },
+      { name: "Anglais", level: "Intermédiaire avancé", score: 4 },
     ],
   },
   contact: {

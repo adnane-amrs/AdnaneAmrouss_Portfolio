@@ -116,7 +116,7 @@
 }
 
 .channels a:hover .channelArrow {
-  color: var(--text);
+  color: var(--accent-text);
   transform: translate(2px, -2px);
 }
 
@@ -191,7 +191,7 @@
 .feedback {
   font-size: 12.5px;
   line-height: 1.5;
-  color: #7fe3a8;
+  color: var(--accent-text);
 }
 
 .feedbackError {

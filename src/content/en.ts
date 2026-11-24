@@ -316,10 +316,10 @@ export const en: Dictionary = {
       },
     ],
     languages: [
-      { name: "Arabic", level: "Native" },
-      { name: "Tamazight", level: "Native" },
-      { name: "French", level: "Intermediate" },
-      { name: "English", level: "Intermediate" },
+      { name: "Arabic", level: "Native", score: 5 },
+      { name: "Tamazight", level: "Native", score: 5 },
+      { name: "French", level: "Intermediate", score: 3 },
+      { name: "English", level: "Upper intermediate", score: 4 },
     ],
   },
   contact: {

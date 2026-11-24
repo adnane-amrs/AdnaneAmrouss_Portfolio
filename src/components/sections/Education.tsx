@@ -5,8 +5,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { StoryCarousel, type Story } from "./StoryCarousel";
 import styles from "./Experience.module.css";
 
-const NATIVE = /native|maternelle/i;
-
 /** Degrees as a story carousel (school logo underneath), then spoken languages. */
 export function Education() {
   const { t } = useLanguage();
@@ -33,7 +31,7 @@ export function Education() {
         <span className="label">{education.languagesTitle}</span>
         <ul>
           {education.languages.map((lang) => {
-            const level = NATIVE.test(lang.level) ? 5 : 3;
+            const level = Math.max(0, Math.min(5, lang.score));
             return (
               <li key={lang.name}>
                 <div>

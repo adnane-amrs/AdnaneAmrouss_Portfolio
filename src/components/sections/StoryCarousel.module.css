@@ -67,8 +67,10 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Current slide number animates in with the lime accent */
 .counter > span:first-child {
   display: inline-block;
+  color: var(--accent-text);
 }
 
 .counterSep {
@@ -158,7 +160,8 @@
   height: 72px;
   border-radius: 50%;
   overflow: hidden;
-  background: #f4f3ef;
+  /* Pure white: most logos are drawn on white */
+  background: #fff;
   box-shadow:
     inset 0 0 0 1px rgba(0, 0, 0, 0.06),
     0 6px 20px rgba(0, 0, 0, 0.35);
@@ -168,6 +171,11 @@
 .logoImg {
   object-fit: contain;
   padding: 12px;
+}
+
+/* Round logos (seals) fill the whole circle */
+.logoCover {
+  object-fit: cover;
 }
 
 .initials {
@@ -201,6 +209,11 @@
   justify-content: flex-end;
   gap: 5px;
   margin-left: auto;
+}
+
+.tags :global(.chip):hover {
+  background: var(--accent-bg);
+  color: var(--accent-text);
 }
 
 /* ---------- Responsive ---------- */

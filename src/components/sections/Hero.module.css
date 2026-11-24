@@ -228,6 +228,15 @@
   white-space: nowrap;
 }
 
+/* The tool under the cursor glows in the lime accent (the strip pauses on hover) */
+.toolsList li {
+  transition: color 0.3s ease;
+}
+
+.toolsList li:hover {
+  color: var(--accent-text);
+}
+
 .tool0 {
   font-family: var(--font-serif);
   font-style: italic;

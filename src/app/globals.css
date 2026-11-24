@@ -20,9 +20,14 @@
   --cream-muted: #6d6b65;
   --cream-line: rgba(18, 18, 18, 0.1);
 
-  --green: #3fd27c;
   --orange: #ff6b3d;
   --lime: #c6f36a;
+
+  /* Soft lime accent (from the skill focus chips), used sparingly on hovers and animations */
+  --accent-bg: rgba(198, 243, 106, 0.1);
+  --accent-bg-strong: rgba(198, 243, 106, 0.16);
+  --accent-line: rgba(198, 243, 106, 0.28);
+  --accent-text: #d5f594;
 
   --container: 1000px;
   --gutter: 16px;
@@ -114,8 +119,8 @@ ol {
 }
 
 ::selection {
-  background: var(--cream);
-  color: var(--cream-ink);
+  background: rgba(198, 243, 106, 0.28);
+  color: #f1ffd6;
 }
 
 :focus-visible {
@@ -254,7 +259,8 @@ ol {
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.11);
+  background: var(--accent-bg-strong);
+  color: var(--accent-text);
 }
 
 .btn-dark {
@@ -295,6 +301,9 @@ ol {
   font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .card-cream .chip {
@@ -309,8 +318,8 @@ ol {
   height: 24px;
   padding: 0 10px 0 9px;
   border-radius: 999px;
-  background: rgba(63, 210, 124, 0.1);
-  color: #7fe3a8;
+  background: var(--accent-bg);
+  color: var(--accent-text);
   font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
@@ -326,7 +335,7 @@ ol {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--lime);
 }
 
 .badge-dot::after {
@@ -334,8 +343,14 @@ ol {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--lime);
   animation: ping 2s var(--ease) infinite;
+}
+
+/* Light lime would vanish on the cream card: use a deeper olive of the same hue there */
+.card-cream .badge-dot,
+.card-cream .badge-dot::after {
+  background: #7a9c1f;
 }
 
 @keyframes ping {

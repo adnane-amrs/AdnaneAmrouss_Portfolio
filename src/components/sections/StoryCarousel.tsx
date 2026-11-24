@@ -125,7 +125,13 @@ function Slide({ story, animate }: { story: Story; animate: boolean }) {
           transition={{ type: "spring", bounce: 0.35, duration: 0.6, delay: 0.1 }}
         >
           {story.logo?.src ? (
-            <Image src={story.logo.src} alt="" fill sizes="72px" className={styles.logoImg} />
+            <Image
+              src={story.logo.src}
+              alt=""
+              fill
+              sizes="72px"
+              className={story.logo.fit === "cover" ? styles.logoCover : styles.logoImg}
+            />
           ) : (
             <span className={styles.initials}>{story.logo?.initials ?? story.title.slice(0, 2)}</span>
           )}

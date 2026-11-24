@@ -32,6 +32,8 @@ export interface SkillItem {
 export interface Logo {
   src: string;
   initials: string;
+  /** "cover" fills the circle (round logos); default "contain" keeps the whole logo with padding. */
+  fit?: "contain" | "cover";
 }
 
 export interface Experience {
@@ -178,7 +180,7 @@ export interface Dictionary {
     page: ProjectPageLabels;
     items: Project[];
   };
-  education: { title: string; label: string; items: Degree[]; languagesTitle: string; languages: { name: string; level: string }[] };
+  education: { title: string; label: string; items: Degree[]; languagesTitle: string; languages: { name: string; level: string; /** Filled bars out of 5 */ score: number }[] };
   contact: {
     note: string;
     available: string;

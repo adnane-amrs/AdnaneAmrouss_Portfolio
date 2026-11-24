@@ -18,10 +18,13 @@ export const site = {
    * while `src` is empty, the circle shows the initials instead.
    */
   logos: {
-    d3soft: { src: "", initials: "D3" },
-    gmsoft: { src: "", initials: "GM" },
-    fsa: { src: "", initials: "FSA" },
-    est: { src: "", initials: "EST" },
+    d3soft: { src: "/D3Soft_logo.png", initials: "D3" },
+    // Round GM emblem cropped from public/gmsoft.png (the full mark is a thin wide band)
+    gmsoft: { src: "/logos/gmsoft-emblem.png", initials: "GM" },
+    // Emblem cropped from public/fsalogo.png (the full logo's text is unreadable at this size)
+    fsa: { src: "/logos/fsa-emblem.png", initials: "FSA" },
+    // Round seal: fills the circle
+    est: { src: "/logo_est.webp", initials: "EST", fit: "cover" as const },
     fst: { src: "", initials: "FST" },
     lycee: { src: "", initials: "SBO" },
   },

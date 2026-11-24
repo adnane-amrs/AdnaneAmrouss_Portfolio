@@ -205,7 +205,7 @@
 }
 
 .footerLinks button:hover {
-  color: var(--text);
+  color: var(--accent-text);
 }
 
 @media (max-width: 640px) {
